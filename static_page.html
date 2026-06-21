@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title> BENEDICT KENDIMA KIKSHAK</title>
+    <style>
+        h1 {
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            color: black;
+            
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px;
+
+        }
+
+        button {
+            background-color: #3f9bf8;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #0077b6;
+        }
+    </style>
+    
+
+    <body>
+        <div class="container">
+            <h1> MY NEW STATIC WEB APPLICATION </h1>
+            <section>
+            <h2> This Static was build by:</h2>
+            <p> 
+                <ul>
+                    <li>BENEDICT KENDIMA KIKSHAK</li>
+                    <li>Computer Science</li>
+                    <li>UJ/2025/CP/0297</li>
+                    <li>200level</li>
+                </ul>
+            </p>
+            </section>
+
+            <section>
+            <h2> About This Page.</h2>
+            <p>The application would be used for some courses like: 
+                <ul>
+                    <li>INS205</li>
+                    <li>and others...</li>
+                </ul>
+            </p>
+            </section>
+
+            <section>
+            <h2> Contact</h2>
+            <p> For more enquiries send me an Email and i will get back to you ASAP!!!</p>
+            <a href="mailto:benedictkendima@gmail.com">
+                <button>Send Email</button>
+            </a>
+            </section>
+        </div>
+    </body>
+
+     <script>
+        /* -------------------------------------------------------
+           Matric-number → button colour
+           Replace the matric value below with your own number.
+           ------------------------------------------------------- */
+        const matric = "UJ/2000/NS/0222"; // <-- CHANGE THIS TO YOUR MAT. NO.
+
+	/* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */ 
+
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+            }
+            return hash;
+        }
+
+        // Normalise input
+        const normalised = matric.trim().toUpperCase();
+
+        // Map the hash to a hue value between 0 and 359 degrees
+        const hue = hashString(normalised) % 360;
+
+        // Build an HSL colour: fixed saturation & lightness, varying hue
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+
+        // Apply the colour to the Send Email button
+        document.getElementById("send-btn").style.background = buttonColour;
+    </script>
+</html>
